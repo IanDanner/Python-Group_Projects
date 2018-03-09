@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors</title>
+    <style>
+        *{
+            text-align: center
+        }
+        form{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <p>Wins = {{session['win']}}</p>
+        <p>loss = {{session['loss']}}</p>
+        <p>ties = {{session['ties']}}</p>
+        <h1>{{move}}</h1>
+        <form action="/action" method='post'>
+            <input type="submit" value = "Rock">
+            <input type="hidden" name = 'val' value='0'>
+        </form>
+        <form action="/action" method='post'>
+            <input type="submit" value = "Paper">
+            <input type="hidden" name = 'val' value='1'>
+        </form> 
+        <form action="/action" method='post'>
+            <input type="submit" value = "Scissors">
+            <input type="hidden" name = 'val' value='2'>
+        </form>
+        <form action="/reset" method='post'>
+            <input type="submit" value = "Reset">
+        </form>
+    </div>
+</body>
+</html>
